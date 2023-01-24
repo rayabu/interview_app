@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@interviewApp/*": ["./*"]
+    },
+    "noImplicitAny": true,
+    "typeRoots": ["./@types/environment.d.ts", "node_modules/@types"]
+  },
+  "exclude": ["node_modules"],
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
+}
