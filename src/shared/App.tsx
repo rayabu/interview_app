@@ -8,13 +8,17 @@ import GoldMembership from './pages/GoldMembership';
 import SilverMembership from './pages/SilverMembership';
 import BronzeMembership from './pages/BronzeMembership';
 import {useCookies} from 'react-cookie';
+import {useAppSelector} from '@interviewApp/src/types';
 import Header from './components/molecules/Header';
 
 const App = () => {
+  const userProfile = useAppSelector((state: any) => state.userProfile);
   const [removeCookie] = useCookies(['secureCookie']);
   return (
     <React.Fragment>
-      <Header removeCookie={removeCookie} />
+      {userProfile && (
+        <Header removeCookie={removeCookie} userProfile />
+      )}
       <Switch>
         <Route exact path="/">
           <Redirect exact from="/" to="/Login" />

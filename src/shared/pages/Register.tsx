@@ -10,6 +10,7 @@ import {
   RegisterUserDataServiceResponse,
   useAppDispatch,
 } from '@interviewApp/src/types';
+import Style from '@interviewApp/src/shared/components/atom/style';
 
 export interface RegisterForm {
   fullName: string;
@@ -171,11 +172,11 @@ const Register = ({navigateToRoute}: RegisterComponent) => {
           <Error errorArg={error} />
         </Form>
       </Container>
-      <style jsx>{`
+      <Style>{`
         .form-control {
           width: 50%;
         }
-      `}</style>
+      `}</Style>
     </>
   );
 };

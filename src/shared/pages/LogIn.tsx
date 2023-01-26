@@ -10,6 +10,7 @@ import {
 import actions from '@interviewApp/src/shared/redux/action';
 import Error from '@interviewApp/src/shared/components/atom/error';
 import {withGoToNav} from '@interviewApp/src/shared/hocs/withGoToNav';
+import Style from '@interviewApp/src/shared/components/atom/style';
 
 interface LoginComponent {
   navigateToRoute: (path: string) => void;
@@ -85,11 +86,11 @@ const Login = ({navigateToRoute}: LoginComponent) => {
           <Error errorArg={error} />
         </Form>
       </Container>
-      <style jsx>{`
+      <Style>{`
         .form-control {
           width: 50%;
         }
-      `}</style>
+      `}</Style>
     </>
   );
 };

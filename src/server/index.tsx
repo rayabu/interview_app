@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom/server';
+import * as ReactDOM from "react-dom/server";
 import * as Express from 'express';
 import {Provider as ReduxProvider} from 'react-redux';
 import {StaticRouter as Router} from 'react-router-dom';
@@ -28,7 +28,7 @@ function main() {
     const appHTML = ReactDOM.renderToString(
       <ReduxProvider store={store}>
         <CookiesProvider>
-          <Router location={req.path}>
+          <Router location={req.path} context={{}}>
             <App />
           </Router>
         </CookiesProvider>

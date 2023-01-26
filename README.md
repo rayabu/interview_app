@@ -1,16 +1,22 @@
 ### With NPM
 
+
 ```
+
+// dev
+
 $> npm install
+$> npm run build-dev
 $> npm run start-dev
 ```
-
-### With debugger
-
 ```
-$> npm run start-debug
+// prod 
+
+$> npm install
+$> npm run build
+$> npm run start
 ```
 
 # Usage
 
-Access the app at `localhost:8080/register`
+Access the app at `localhost:8080/`

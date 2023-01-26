@@ -1,22 +1,22 @@
 import React, {FC, useEffect} from 'react';
 import {DropdownButton, Dropdown} from 'react-bootstrap';
 import {withGoToNav} from '@interviewApp/src/shared/hocs/withGoToNav';
-import {useAppDispatch, useAppSelector} from '@interviewApp/src/types';
+import {useAppDispatch, UserProfile} from '@interviewApp/src/types';
 import actions from '@interviewApp/src/shared/redux/action';
+import Style from '@interviewApp/src/shared/components/atom/style';
 
 interface Props {
   navigateToRoute: (path: string) => void;
   removeCookie: any;
+  userProfile: UserProfile
 }
 
-const Header: FC<Props> = ({navigateToRoute, removeCookie}) => {
+const Header: FC<Props> = ({navigateToRoute, removeCookie, userProfile}) => {
   const dispatch = useAppDispatch();
-
-  const userProfile = useAppSelector((state: any) => state.userProfile);
 
   useEffect(() => {
     dispatch(actions.getUserProfile());
-  }, [userProfile]);
+  }, [userProfile != null]);
 
   const logoutWrapper = () => {
     removeCookie('secureCookie', {path: '/', domain: 'localhost'});
@@ -40,7 +40,7 @@ const Header: FC<Props> = ({navigateToRoute, removeCookie}) => {
           )}
         </div>
       </header>
-      <style jsx>{``}</style>
+      <Style>{``}</Style>
     </React.Fragment>
   );
 };

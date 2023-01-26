@@ -1,5 +1,6 @@
 import React from 'react';
 import {Error} from '@interviewApp/src/types';
+import Style from '@interviewApp/src/shared/components/atom/style';
 
 const Error = (errorArg: any) => {
   return (
@@ -7,11 +8,11 @@ const Error = (errorArg: any) => {
       {errorArg.isError && (
         <label className="text-color">Error: {errorArg.message}</label>
       )}
-      <style jsx>{`
+      <Style>{`
         .text-color {
           color: red;
         }
-      `}</style>
+      `}</Style>
     </>
   );
 };

@@ -149,7 +149,10 @@ export type State = {
 };
 
 export type UserProfile = {
+  fullName: string;
   userName: string;
+  email: string;
+  password: string;
   membershipType: string;
 };
 
